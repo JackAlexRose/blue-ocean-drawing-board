@@ -10,21 +10,21 @@ export const ChartManager = () => {
     datasets: [],
   });
   const [chartTitle, setChartTitle] = React.useState<string>("");
+  const [factors, setFactors] = React.useState<string[]>([""]);
 
   React.useEffect(() => {
-    const labels = ["January", "February", "March", "April", "May", "June"];
     setChartData({
-      labels,
+      labels: factors,
       datasets: [
         {
           label: "My First Dataset",
-          data: labels.map((_, i) => i * 1.5),
+          data: factors.map((_, i) => i * 1.5),
           borderColor: "rgb(75, 192, 192)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
         },
         {
           label: "My Second Dataset",
-          data: labels.map((_, i) => i),
+          data: factors.map((_, i) => i),
           borderColor: "rgb(255, 99, 132)",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
         },
@@ -32,12 +32,15 @@ export const ChartManager = () => {
     });
 
     setChartTitle("My Chart");
-  }, []);
+  }, [factors]);
 
   return (
     <div className={styles.managerContainer}>
       <BlueOceanChart chartData={chartData} chartTitle={chartTitle} />
-      <BlueOceanForm titleChangeHandler={setChartTitle} />
+      <BlueOceanForm
+        titleChangeHandler={setChartTitle}
+        changeFactors={(factors) => setFactors(factors)}
+      />
     </div>
   );
 };

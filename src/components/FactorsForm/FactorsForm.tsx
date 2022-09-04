@@ -2,7 +2,11 @@ import React from "react";
 import { TextField, Select, Button } from "@mui/material";
 import styles from "./FactorsForm.module.css";
 
-export const FactorsForm = () => {
+type FactorsFormProps = {
+  changeFactors: (factorList: string[]) => void;
+};
+
+export const FactorsForm: React.FC<FactorsFormProps> = ({ changeFactors }) => {
   const [factorList, setFactorList] = React.useState<string[]>([]);
   const [activeFactor, setActiveFactor] = React.useState<number>(-1);
   const [factorName, setFactorName] = React.useState<string>("");
@@ -12,6 +16,10 @@ export const FactorsForm = () => {
       setActiveFactor(factorList.length - 1);
     }
   }, []);
+
+  React.useEffect(() => {
+    changeFactors(factorList);
+  }, [factorList]);
 
   const handleSelectChange = (value: string) => {
     if (factorList.includes(value)) {

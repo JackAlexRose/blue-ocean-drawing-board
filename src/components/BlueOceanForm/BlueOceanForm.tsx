@@ -7,10 +7,12 @@ import { FactorsForm } from "../FactorsForm";
 export type BlueOceanFormProps = {
   titleChangeHandler: (title: string) => void;
   addDatasetHandler?: () => void;
+  changeFactors: (factorList: string[]) => void;
 };
 
 const BlueOceanForm: React.FC<BlueOceanFormProps> = ({
   titleChangeHandler,
+  changeFactors,
 }) => {
   return (
     <div className={styles.formContainer}>
@@ -20,7 +22,7 @@ const BlueOceanForm: React.FC<BlueOceanFormProps> = ({
         variant="standard"
         style={{ margin: "20px 20px" }}
       />
-      <FactorsForm />
+      <FactorsForm changeFactors={changeFactors} />
     </div>
   );
 };
