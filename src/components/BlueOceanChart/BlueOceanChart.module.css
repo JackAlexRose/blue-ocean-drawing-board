@@ -1,4 +1,4 @@
 .chartContainer {
-  height: 70%;
   width: 70%;
+  min-height: 500px;
 }

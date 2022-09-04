@@ -48,6 +48,7 @@ export const BlueOceanChart: React.FC<ChartProps> = ({
         max: 10,
       },
     },
+    maintainAspectRatio: false,
   };
 
   return (
