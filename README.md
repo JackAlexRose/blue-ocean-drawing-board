@@ -1,6 +1,6 @@
 This is really a tool for me for drafting out creative projects. Heavily inspired by the Strategy Canvas methodology presented in the book "Blue Ocean Strategy" by W. Chan Kim and Renée Mauborgne.
 
-I wont be sharing hosting links to this as I think that may be violating copyright laws.
+I wont be sharing hosting links to this as I think that could be violating copyright laws.
 
 I have never used any services similar to this and this is only based on the concepts presented in the book. In honesty, I've never read the book i've just seen Youtube videos talking about the concept so I could be completely misunderstanding.
 
