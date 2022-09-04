@@ -1,6 +1,7 @@
 import React from "react";
-import { ChartData, ChartDataSet } from "../../types";
+import { ChartData } from "../../types";
 import { BlueOceanChart } from "../BlueOceanChart/BlueOceanChart";
+import BlueOceanForm from "../BlueOceanForm/BlueOceanForm";
 import styles from "./ChartManager.module.css";
 
 export const ChartManager = () => {
@@ -8,7 +9,6 @@ export const ChartManager = () => {
     labels: [],
     datasets: [],
   });
-
   const [chartTitle, setChartTitle] = React.useState<string>("");
 
   React.useEffect(() => {
@@ -18,13 +18,13 @@ export const ChartManager = () => {
       datasets: [
         {
           label: "My First Dataset",
-          data: labels.map((_, i) => i * 10),
+          data: labels.map((_, i) => i * 1.5),
           borderColor: "rgb(75, 192, 192)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
         },
         {
           label: "My Second Dataset",
-          data: labels.map((_, i) => i * 21),
+          data: labels.map((_, i) => i),
           borderColor: "rgb(255, 99, 132)",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
         },
@@ -37,6 +37,7 @@ export const ChartManager = () => {
   return (
     <div className={styles.managerContainer}>
       <BlueOceanChart chartData={chartData} chartTitle={chartTitle} />
+      <BlueOceanForm titleChangeHandler={setChartTitle} />
     </div>
   );
 };

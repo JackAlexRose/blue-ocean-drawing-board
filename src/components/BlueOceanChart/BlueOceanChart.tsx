@@ -42,6 +42,12 @@ export const BlueOceanChart: React.FC<ChartProps> = ({
         text: chartTitle,
       },
     },
+    scales: {
+      y: {
+        min: 0,
+        max: 10,
+      },
+    },
   };
 
   return (
